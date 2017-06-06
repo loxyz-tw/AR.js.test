@@ -97,15 +97,15 @@
       (function(){
         //讀取外部 mtl 檔案
         var mtlloader = new THREE.MTLLoader();
-        mtlloader.setPath( 'objs/hand/' );
-        mtlloader.load('hand.mtl', function( materials ){
+        mtlloader.setPath( 'objs/bedside-table/SkinA/' );
+        mtlloader.load('Table_de_nuit_Final.mtl', function( materials ){
           materials.preload();
           //讀取外部 obj 檔案
           var objloader = new THREE.OBJLoader();
           objloader.setMaterials( materials );
-          objloader.load('objs/hand/hand.obj', function( object ){
-            object.position.set(0,0,0);
-            object.scale.set(0.5,0.5,0.5);
+          objloader.load('objs/bedside-table/SkinA/Table de nuit_Final.obj', function( object ){
+            object.position.set(-0.6,-0.5,-1);
+            object.scale.set(0.02,0.02,0.02);
             object.rotation.x += 0.04;
             scene.add(object);
           });
