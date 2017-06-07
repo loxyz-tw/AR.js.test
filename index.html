@@ -16,6 +16,9 @@
     <script src="js/threex-armarkercontrols.js"></script>
   </head>
   <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	  <div style='position: absolute; top: 10px; width:100%; text-align: center;z-index:1';>
+		<a href='wallhole.html'>animate</a>
+	  </div>
     <script>
       var object;
       //算圖
@@ -97,16 +100,16 @@
       (function(){
         //讀取外部 mtl 檔案
         var mtlloader = new THREE.MTLLoader();
-        mtlloader.setPath( 'objs/bedside-table/SkinA/' );
-        mtlloader.load('Table_de_nuit_Final.mtl', function( materials ){
+        mtlloader.setPath( 'objs/bonsai-tree/' );
+        mtlloader.load('bonsai-tree.mtl', function( materials ){
           materials.preload();
           //讀取外部 obj 檔案
           var objloader = new THREE.OBJLoader();
           objloader.setMaterials( materials );
-          objloader.load('objs/bedside-table/SkinA/Table de nuit_Final.obj', function( object ){
-            object.position.set(-0.6,-0.5,-1);
+          objloader.load('objs/bonsai-tree/bonsai-tree.obj', function( object ){
+            object.position.set(0,0,0);
             object.scale.set(0.02,0.02,0.02);
-            object.rotation.x += 0.04;
+//            object.rotation.x += 0.04;
             scene.add(object);
           });
         });
